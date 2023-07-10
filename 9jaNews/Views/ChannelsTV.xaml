@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+               Title="Channels TV Headlines"
+                   BackgroundColor="#443b32"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_9jaNews.Views.ChannelsTV">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="newspaper.png"/>
+    </ContentPage.ToolbarItems>
+    <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}">
+        <ScrollView Margin="15,15,15,10">
+        <ListView x:Name="ChannelsNewslist" HasUnevenRows="True" SeparatorVisibility="Default" ItemsSource="{Binding Feeds}"
+                      ItemTapped="ListView_ItemSelected" RowHeight="50" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame BackgroundColor="DarkGray" HeightRequest="69"  Padding="0" Margin="0,0,0,10"
+                               HasShadow="True" CornerRadius="5">
+                            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <StackLayout Grid.Row="1" BackgroundColor="red"
+                                 HorizontalOptions="FillAndExpand" Padding="0,0,0,19" Margin="0,-6,0,0">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <StackLayout Orientation="Horizontal" Grid.Row="0">
+                                                <Label Text="{Binding Title}" FontSize="13" TextColor="White"
+                                       FontAttributes="Bold" HorizontalOptions="StartAndExpand" Margin="7,7,0,0"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" Grid.Row="1"  Margin="7,-4,7,7">
+                                                <Image Source="calendar" Aspect="AspectFit" HorizontalOptions="Start" WidthRequest="25" HeightRequest="25"/>
+                                                <Label Text="{Binding DatE}" FontSize="12" HorizontalOptions="StartAndExpand" TextColor="White"
+                                       Margin="-2,2,0,0"/>
+                                            </StackLayout>
+                                        </Grid>
+                                    </StackLayout>
+                                </Grid>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ScrollView>
+        </RefreshView>
+</ContentPage>

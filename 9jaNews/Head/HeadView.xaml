@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_9jaNews.Head.HeadView">
+    <ContentView.Content>
+        <Grid HorizontalOptions="FillAndExpand">
+            <Image Source="QQ.png" Grid.Row="0" WidthRequest="150" HeightRequest="150" Margin="0,0,0,0"/>
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

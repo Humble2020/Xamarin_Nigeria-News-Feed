@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Utils="clr-namespace:_9jaNews.Utils"
+             x:Class="_9jaNews.Views.webLoadChannelsTV">
+    <StackLayout>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0">
+                    <WebView x:Name="Browserz" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="1000" WidthRequest="1000" Navigating="webOnNavigating" Navigated="webOnEndNavigating" />
+                    <Utils:Loading x:Name="Loadingz" Color="Red" IsRunning="true" IsVisible="true" />
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>
